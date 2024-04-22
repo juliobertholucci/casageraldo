@@ -1,0 +1,44 @@
+.tingle-modal * {
+    font-size: revert;
+    line-height: revert;
+}
+
+
+
+
+
+.tingle-modal form {
+    margin:0;
+}
+.tingle-modal section button.google{
+ background-color:#EA4335!important;
+ margin-left: 5px;
+ border-radius:8px;
+ font-family: 'Satoshi', sans-serif;
+}
+.tingle-modal section button.fb{
+    background-color:#0866FF!important;
+    margin-right: 5px;
+    border-radius:8px;
+    font-family: 'Satoshi', sans-serif;
+}
+    
+.tingle-modal #identification-identification-button-submit,
+.tingle-modal #identification-register-submit-button,
+.tingle-modal #identification-existent-email-button-submit{
+    font-weight: 600 !important;
+    margin: 10px 0 !important;
+    border-radius:8px;
+    font-family: 'Satoshi', sans-serif;
+}
+
+@media (max-width: 768px){
+    .tingle-modal.item-availability-alert-modal .tingle-modal-box__footer{
+        display: flex;
+        justify-content: center;
+    }
+    
+    .tingle-modal.item-availability-alert-modal .tingle-modal-box__footer button{
+        font-weight: 700 !important;
+    }
+}

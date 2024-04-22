@@ -1,0 +1,38 @@
+CanopusEventCenter.addListener('ServerDataLoader.Loaded', function(data) {
+    var isLoggedIn = data.client !== null;
+    if (isLoggedIn) {
+        $('.header-menu #link-account').show();
+        $('.header-menu #link-quit').show();
+        $('.header-menu #link-identification-modal').hide();
+        $('a.header-icon').attr("href", "/account");
+        $('h6.user-text .font-weight-bold').text("Minha conta");
+    } else {
+        $('.header-menu #link-quit').hide();
+        $('.header-menu #link-account').hide();
+        $('.header-menu #link-identification-modal').show();
+        $('.header-icon').attr("canopus-open-identification-modal", "");
+        $('.user-text').attr("canopus-open-identification-modal", "");
+        $('h6.user-text .font-weight-bold').text("Login/Registre-se");
+    }
+    
+    var cart = data.cart;
+    $('.cart-dropdown .cart-count').html(cart.quantity);
+
+});
+var imagens = document.getElementsByTagName('img');
+    var count = 0;
+    for (var i = 0; i < imagens.length; i++) {
+        var imagem = imagens[i];
+        var alt = imagem.alt;
+        var title = imagem.title;
+        var src = imagem.src;
+  
+        if (alt && (alt.toLowerCase().includes('betalabs'))) {
+            count++;
+        } else if (title && (title.toLowerCase().includes('betalabs'))) {
+            count++;
+        }
+    }
+    if(count == 0){
+            jQuery('#letsencrypt').after("<a href='https://www.betalabs.com.br/plataforma-e-commerce/'><img src='https://assets.betalabs.net/production/casageraldo/images/stores/1/betalabs-plataforma-ecommerce.png' alt='Plataforma Betalabs' title='Plataforma Betalabs' style='margin-bottom: 0 !important;margin-top: -44px;'/></a>")
+        }
